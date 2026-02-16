@@ -1,0 +1,20 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var searchInsert = function(nums, target) {
+    
+    let l = 0, r = nums.length;
+    while(l < r){
+        const mid = Math.floor((r + l) / 2);
+
+        if(nums[mid] < target){
+            l = mid+1;
+        }else {
+            r = mid;
+        }
+    }
+
+    return l;
+};
